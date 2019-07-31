@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 
 # Gemfile
+gem "figaro"
 gem 'omniauth-facebook'
 gem 'devise'
 gem 'autoprefixer-rails'

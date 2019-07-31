@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-
+    
     before_action :authenticate_user!
 
     user_signed_in?
@@ -13,7 +12,7 @@ class UsersController < ApplicationController
         if !user_signed_in?
            redirect_to new_user_session_path
         else 
-           redirect_to root_path
+           redirect_to "post#index"
         end
      end
 
