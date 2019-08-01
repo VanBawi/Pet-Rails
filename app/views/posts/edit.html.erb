@@ -1,2 +1,35 @@
 <h1>Posts#edit</h1>
 <p>Find me in app/views/posts/edit.html.erb</p>
+
+
+<h1> Edit Post </h1>
+
+<%# <%if current_user && current_user.id == params[:id].to_i %> 
+
+
+    <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+
+    <div class="field">
+      <%= f.label :title %> 
+      <%= f.text_field :title %><br>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %><br>
+    </div>
+
+    <div class="field">
+      <%= f.label :picture %> 
+      <%= f.file_field :picture %><br>
+    </div>
+
+    <div class="field">
+      <%= f.label :images %> 
+      <%= f.file_field :images, multiple: true %><br>
+    </div>
+
+    <div class="field">
+      <%= f.submit({:class => 'btn btn-primary'})%>
+    </div>
+    <% end %>

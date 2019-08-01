@@ -1,19 +1,19 @@
 
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Pet Lover</a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  </form>
-</nav>
-
-
 <div container>
 <h1>I am here in this index user page</h1>
 <h1>Adorable Dogs</h1>
 
-<%# <% if current_user%>
-<h1><%= current_user.email %> Hello! </h1>
-<%# <%end%>
+<h1>  Hello! 
+    <% if current_user %>
+        <%= current_user.name%>
+    <%end%>
+</h1>
+</div>
 
+<div class="row"> 
+    <div class="column">
+    <img src="https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2018-02/vicious_dog_0.png?itok=nsghKOHs">
+    <img src="https://fortunedotcom.files.wordpress.com/2019/01/boo.jpg" >
+    <img src="https://www.gannett-cdn.com/authoring/video-thumbnails/4e66a4d0-7f81-4bda-882d-d7a18937f061_poster.jpg">
+    </div>
 </div>

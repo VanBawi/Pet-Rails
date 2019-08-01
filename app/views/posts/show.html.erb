@@ -1,2 +1,36 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+
+
+<div style="margin: 40px;">
+    <h1>Post Selected</h1> 
+</div>
+
+<div class="container">
+    <strong>Title:</strong>
+    <h3><%= @post.title %>
+</div>
+
+<div class="container">
+    <strong>Description:</strong>
+    <h5><%= @post.description %></h5><br>
+</div>
+
+<div class="container">
+    <strong>Picture:</strong>
+    <%= image_tag(url_for(@post.picture))%>
+</div>
+
+<div class="container">
+    <strong>Images:</strong>
+    <% @post.images.each do |each_image|%>
+    <%= image_tag(url_for(each_image))%>
+    <% end %>
+</div>
+
+
+<%# <%= link_to 'Edit', edit_post_path(@post)%>
+<%= link_to 'Back', posts_path%>
+<hr>
+<%# 
+.variant(resize_to_limit: [200, 200]) %>
