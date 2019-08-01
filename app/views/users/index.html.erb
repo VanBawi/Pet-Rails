@@ -1,6 +1,4 @@
 
-
-
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand">Pet Lover</a>
   <form class="form-inline">
@@ -10,13 +8,12 @@
 </nav>
 
 
-
-<body>
+<div container>
 <h1>I am here in this index user page</h1>
 <h1>Adorable Dogs</h1>
 
-<% if current_user%>
-<%= current_user.name%>
-<%end%>
+<%# <% if current_user%>
+<h1><%= current_user.email %> Hello! </h1>
+<%# <%end%>
 
-</body>
+</div>
