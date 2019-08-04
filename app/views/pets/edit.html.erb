@@ -1,13 +1,13 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>pets#edit</h1>
+<p>Find me in app/views/pets/edit.html.erb</p>
 
 
-<h1> Edit Post </h1>
+<h1> Edit pet </h1>
 
 <%# <%if current_user && current_user.id == params[:id].to_i %> 
 
 
-    <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+    <%= form_for :pet, url: pet_path(@pet), method: :put do |f| %>
 
     <div class="field">
       <%= f.label :title %> 

@@ -10,3 +10,29 @@
 
 // Your CSS partials
 @import "pages/index";
+// @import "sessions/new";
+
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.pets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: sapce-around;
+}
+
+.pet {
+    width: 80%;
+    min-width: 400px;
+}

@@ -73,29 +73,43 @@ body {
 
 
 </head>
-<!-- app/views/pages/home.html.erb -->
-<% if user_signed_in? %>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Pet Lover</a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  </form>
-</nav>
 
-<% else %>
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Pet Lover</a>
-      <form class="form-inline" style="margin: 10px;">
-        <div style="margin-left: 20px;"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></div>
-        <div style="margin-left: 20px;"><%= link_to "Sign Up", new_user_registration_path  %></div>
-        <div style="margin-left: 20px;"><%= link_to "Sign In", user_session_path  %></div>     
-      </form>
-  </nav>
-<% end %>
 
 <body>
+<!-- app/views/pages/home.html.erb -->
+<header>
+  <% if user_signed_in? %>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Pet Lover</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </form>
+  </nav>
+
+  <% else %>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">Pet Lover</a>
+        <form class="form-inline" style="margin: 10px;">
+          <div style="margin-left: 20px;"><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></div>
+          <div style="margin-left: 20px;"><%= link_to "Sign Up", new_user_registration_path  %></div>
+          <div style="margin-left: 20px;"><%= link_to "Sign In", user_session_path  %></div>     
+        </form>
+    </nav>
+  <% end %>
+</header>
+
+
+<section>
+    <div id="flash">
+      <% flash.each do |key, value| %>
+       <div class="flash alert <%= alert_class(key)%>"><%= value %></div>
+       <% end %>
+    </div>
    <%= yield %>
+</section>
+
+
   <%= javascript_pack_tag "application" %> 
 </body>
 

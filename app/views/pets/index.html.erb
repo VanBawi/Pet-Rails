@@ -1,0 +1,21 @@
+<div class="title-containerr">
+    <h1>Adorable Dogs </h1>
+</div>
+
+
+<div class="pets">
+    <% @pets.each do |pet| %>
+    <div class="pet">
+        <h3> Title: <%= link_to truncate(pet.title), pet_path(pet) %> </h3><br>
+        <h3> Description:  <%= link_to truncate(pet.description, length: 150) %></h3><br>
+        <ul class="pet-action">
+            <li> <%= link_to "Edit", edit_pet_path(pet)%> </li> <br>
+            <li> <%= link_to "Delete", pet_path(pet), data: { comfirm: "Are you sure you want to delete: #{pet.name}?",} , method: :delete %> </li><hr>
+        </ul>
+    </div>
+    <% end %>
+</div>
+
+<div>
+    <%= link_to "Add pet", new_pet_path %>
+</div>
