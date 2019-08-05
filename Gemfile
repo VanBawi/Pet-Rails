@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 
 # Gemfile
+gem 'aws-sdk-s3'
 gem "figaro"
 gem "mini_magick"
 gem 'omniauth-facebook'
