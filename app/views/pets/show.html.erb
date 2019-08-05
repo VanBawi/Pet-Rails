@@ -1,36 +1,39 @@
-<div style="margin: 40px;">
-    <h1>Pet Selected</h1> 
-</div>
-
 <div class="container">
-    <strong>Title:</strong>
-    <h3><%= @pet.title %>
-</div>
 
-<div class="container">
-    <strong>Description:</strong>
-    <h5><%= @pet.description %></h5><br>
-</div>
+    <div style="margin: 40px;">
+        <h1>Pet Selected</h1> 
+    </div>
 
-<div class="container">
-    <strong>Picture:</strong>
-    <%= image_tag(url_for(@pet.picture))%>
-</div>
+    <div class="container">
+        <strong>Title:</strong>
+        <h3><%= @pet.title %>
+    </div>
 
-<div class="container">
-    <strong>Images:</strong>
-    <% @pet.images.each do |each_image|%>
-    <%= image_tag(url_for(each_image))%>
-    <% end %>
-</div>
+    <div class="container">
+        <strong>Description:</strong>
+        <h5><%= @pet.description %></h5><br>
+    </div>
+
+    <div class="container">
+        <strong>Picture:</strong>
+        <%= image_tag(url_for(@pet.picture))%>
+    </div>
+
+    <div class="container">
+        <strong>Images:</strong>
+        <% @pet.images.each do |each_image|%>
+        <%= image_tag(url_for(each_image))%>
+        <% end %>
+    </div>
 
 
-<%# <%= link_to 'Edit', edit_pet_path(@pet)%>
-<div>
-    <li> <%= link_to 'Back', pets_path%> </li>
-    <li> <%= link_to "Edit", edit_pet_path(@pet)%> </li> <br>
-    <li> <%= link_to "Delete", pet_path(@pet), method: :delete %> </li>
-    <hr>
+    <%# <%= link_to 'Edit', edit_pet_path(@pet)%>
+    <div>
+        <li> <%= link_to 'Back', pets_path%> </li>
+        <li> <%= link_to "Edit", edit_pet_path(@pet)%> </li> <br>
+        <li> <%= link_to "Delete", pet_path(@pet), method: :delete %> </li>
+        <hr>
+    </div>
+    <%# 
+    .variant(resize_to_limit: [200, 200]) %>
 </div>
-<%# 
-.variant(resize_to_limit: [200, 200]) %>

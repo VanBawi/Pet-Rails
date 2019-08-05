@@ -1,11 +1,9 @@
-<h1>pets#edit</h1>
-<p>Find me in app/views/pets/edit.html.erb</p>
+<div class="container">
 
-
-<h1> Edit pet </h1>
-
+<div class="title-container">
+  <h1> Edit pet </h1>
+</div>
 <%# <%if current_user && current_user.id == params[:id].to_i %> 
-
 
     <%= form_for :pet, url: pet_path(@pet), method: :put do |f| %>
 
@@ -28,8 +26,4 @@
       <%= f.label :images %> 
       <%= f.file_field :images, multiple: true %><br>
     </div>
-
-    <div class="field">
-      <%= f.submit({:class => 'btn btn-primary'})%>
-    </div>
-    <% end %>
+</div>
