@@ -301,8 +301,10 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   # config.omniauth :facebook, ENV['2320130554908345'], ENV['6362f974e87e2f324fc155d533d0ff67'], scope: 'name,email,image'
-config.omniauth :facebook, Rails.application.credentials.facebook_id, Rails.application.credentials.facebook_secret,callback_url:
-Rails.application.credentials.hostname, token_params: { parse: :json }
-  
+
+  config.omniauth :facebook, Rails.application.credentials.facebook_id, Rails.application.credentials.facebook_secret, callback_url: Rails.application.credentials.hostname + "users/auth/facebook/callback"
+# config.omniauth :facebook, Rails.application.credentials.facebook_id, Rails.application.credentials.facebook_secret,callback_url:
+# Rails.application.credentials.hostname, token_params: { parse: :json }
+  # ENV["hostname"] 
   # callback_url: "http://localhost:3000/users/auth/facebook/callback"
 end

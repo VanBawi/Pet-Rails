@@ -2,8 +2,6 @@
     <h1>Pet Selected</h1> 
 </div>
 
-<h1><%= @pet.name %> </h1>
-
 <div class="container">
     <strong>Title:</strong>
     <h3><%= @pet.title %>
@@ -31,7 +29,7 @@
 <div>
     <li> <%= link_to 'Back', pets_path%> </li>
     <li> <%= link_to "Edit", edit_pet_path(@pet)%> </li> <br>
-    <li> <%= link_to "Delete", pet_path(@pet), data: { comfirm: "Are you sure you want to delete: #{pet.name}?",} , method: :delete %> </li>
+    <li> <%= link_to "Delete", pet_path(@pet), method: :delete %> </li>
     <hr>
 </div>
 <%# 

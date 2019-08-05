@@ -23,7 +23,7 @@ class PetsController < ApplicationController
     if(@pet.save)
       redirect_to pets_path(@pets)
     else
-      @errors = @pet.errors.full_messages
+       @errors = @pet.errors.full_messages
       render 'new'
     end
   end

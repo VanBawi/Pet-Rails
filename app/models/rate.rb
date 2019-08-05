@@ -1,3 +1,3 @@
 class Rate < ApplicationRecord
-    belongs_to :pet
+    # belongs_to :pet
 end
