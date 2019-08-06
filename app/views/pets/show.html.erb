@@ -5,22 +5,22 @@
     </div>
 
     <div class="container">
-        <strong>Title:</strong>
+        <strong>Title:</strong><br>
         <h3><%= @pet.title %>
     </div>
 
     <div class="container">
-        <strong>Description:</strong>
+        <strong>Description:</strong><br>
         <h5><%= @pet.description %></h5><br>
     </div>
 
     <div class="container">
-        <strong>Picture:</strong>
+        <strong>Picture:</strong><br>
         <%= image_tag(url_for(@pet.picture))%>
     </div>
 
     <div class="container">
-        <strong>Images:</strong>
+        <strong>Images:</strong><br>
         <% @pet.images.each do |each_image|%>
         <%= image_tag(url_for(each_image))%>
         <% end %>
