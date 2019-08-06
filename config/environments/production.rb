@@ -70,6 +70,7 @@ config.action_mailer.mailgun_settings = {
   api_key: Rails.application.credentials.mailgun_api, 
   domain: 'sandbox6d54e8d9ea9e4c938330b85682056234.mailgun.org'
 }
+
 config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                 587,
