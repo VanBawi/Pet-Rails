@@ -1,0 +1,25 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.pets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: sapce-around;
+}
+
+.pet {
+    width: 80%;
+    min-width: 400px;
+}

@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 
 # Gemfile
+gem 'mailgun-ruby'
 gem 'aws-sdk-s3', require: false
 gem "figaro"
 gem "mini_magick"
