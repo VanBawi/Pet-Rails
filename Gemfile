@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 
 # Gemfile
-gem 'devise-async'
+
 gem 'sidekiq'
 gem 'mailgun-ruby'
 gem 'aws-sdk-s3', require: false

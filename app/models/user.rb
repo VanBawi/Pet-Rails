@@ -4,9 +4,12 @@ class User < ApplicationRecord
   # has_many :pets
 
 
-  devise :database_authenticatable, :registerable, :async,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
