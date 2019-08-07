@@ -20,12 +20,18 @@
       margin-left: 20px; 
       background-color: white; 
       text-decoration:none;
-      padding:10px; 
+      padding:5px; 
       border-radius: 5px;
+      color: white;
     }
     .navbartop{
-      background-color: #0000e6;
+      background-color: #808080;
     }
+    /* h1{
+      color: white;
+      margin-left: 30px;
+      font-size: 100px;
+    } */
     </style>
 </head>
 
@@ -47,7 +53,7 @@
   <% else %>
   <div class="navbartop">
     <nav class="navbar ">
-      <a class="navbar-brand">Pet Lover</a>
+      <h1 class="navbar-brand"><strong>Pet Lover</strong></h1>
         <form class="form-inline" style="margin: 10px;">
           <%# <div class="nav_link"></div> %>
           <div class="nav_link"><%= link_to "Sign Up", new_user_registration_path  %></div>

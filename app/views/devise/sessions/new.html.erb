@@ -1,5 +1,8 @@
 
 <div class="col-md-6 ">
+  <div class="col-md-6 header">
+      <h1> Sign In to Pet Lover</h1>
+  </div>
 
 <div class="col-md-6 login_btn ">
   <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary"%>
@@ -7,7 +10,7 @@
 
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+      <%= f.error_notification %>
     <div class="col-md-6 text_box">
       <span class="txt1">
         <%= f.input :email,
@@ -27,6 +30,9 @@
       <%= f.submit "Sign In", class: "btn btn-primary"%>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+  <div class="col-md-6 text_box1">
+    
+       <%= render "devise/shared/links" %> 
+    
+  </div>
 </div>
