@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # has_many :pets
 
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :async,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
 
