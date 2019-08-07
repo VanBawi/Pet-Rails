@@ -10,7 +10,7 @@
       </div>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+        <%# <%= render "devise/shared/error_messages", resources: resource %>
         <div class="col-md-6 text_box">
             <span class="txt1">
               <%= f.input :email,
