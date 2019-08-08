@@ -1,29 +1,31 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  # has_many :pets
+  has_many :pets
 
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
-  # def send_devise_notification(notification, *args)
-  #   devise_mailer.send(notification, self, *args).deliver_later
-  # end
+
+        #  :confirmable,
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 
   after_commit :send_pending_devise_notifications
 
-  after_create_commit	:send_welcome_mail
+  # after_create_commit	:send_welcome_mail
   # after_update_commit	:send_profile_update_notification
   # after_destroy_commit	:remove_profile_data
   # UserMailer.welcome_email(@user).deliver_later
   #  TestingJob.perform_later(@user)
 
-  def send_welcome_mail
-    UserMailer.welcome_email(@user).deliver_later
-    # UserMailer.send_welcome_mail(email: email)
-    # TestingJob.perform_later(@user)
-  end
+  # def send_welcome_mail
+  #   UserMailer.welcome_email(@user).deliver_later
+  #   # UserMailer.send_welcome_mail(email: email)
+  #   # TestingJob.perform_later(@user)
+  # end
 
  # If the record is new or changed then delay the email sending
       

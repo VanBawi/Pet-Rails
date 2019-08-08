@@ -1,29 +1,31 @@
 <div class="container">
 
-<div class="title-container">
-  <h1> Edit pet </h1>
-</div>
-<%# <%if current_user && current_user.id == params[:id].to_i %> 
-
-    <%= form_for :pet, url: pet_path(@pet), method: :put do |f| %>
-
-    <div class="field">
-      <%= f.label :title %> 
-      <%= f.text_field :title %><br>
+    <div class="title-container">
+        <h1> Edit pet </h1>
     </div>
+    <%# <%if current_user && current_user.id == params[:id].to_i %> 
+    <div>
+      <%= form_for :pet, url: pet_path(@pet), method: :put do |f| %>
 
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_area :description %><br>
-    </div>
+        <div class="field">
+            <%= f.label :title %> 
+            <%= f.text_field :title, class: "form-control" %><br>
+        </div>
 
-    <div class="field">
-      <%= f.label :picture %> 
-      <%= f.file_field :picture %><br>
-    </div>
+        <div class="field">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: "form-control" %><br>
+        </div>
 
-    <div class="field">
-      <%= f.label :images %> 
-      <%= f.file_field :images, multiple: true %><br>
-    </div>
+        <div class="field">
+            <%= f.label :picture %> 
+            <%= f.file_field :picture, class: "form-control" %><br>
+        </div>
+
+        <div class="field">
+          <%= f.label :images %> 
+          <%= f.file_field :images, multiple: true, class: "form-control" %><br>
+        </div>
+        <%end%>
+      </div>
 </div>

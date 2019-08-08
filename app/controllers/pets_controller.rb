@@ -2,8 +2,20 @@ class PetsController < ApplicationController
   # before_action :require_login
   before_action :authenticate_user!
   
+
   def index
+    search = params[:title].present? ? params[:title] : nil
     @pets = Pet.all
+  end
+
+  def autocomplete
+    render json: Pet.search(params[:query], {
+      fields: ["title^5", "description"],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:title)
   end
 
   def new

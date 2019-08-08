@@ -1,3 +1,19 @@
+ <div class="container">
+    <%= form_tag(pets_path, method: :get, class: "form-inline", role: 'search') do %>
+        <div class="input-group">
+            <%= text_field_tag :title, 
+                params[:title],
+                id: 'pets_search',
+                # autocomplete: on,
+                placeholder: 'Search',
+                class: 'form-control'%>
+        </div>
+        <div class="input-group">
+            <%= submit_tag 'Search', name: nil, class: "btn-btn-default"%>
+        </div>
+    <%end%>
+</div>
+
 <div class="container">
     <div class="title-containerr">
         <h1>Adorable Dogs </h1>

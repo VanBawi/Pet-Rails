@@ -6,7 +6,7 @@ class CreatePets < ActiveRecord::Migration[6.0]
       t.string    :picture
       # t.references :user, foreign_key: true
       t.string    :images
-      # t.string    :user_id
+      t.string    :user_id
       t.timestamps
     end
   end
