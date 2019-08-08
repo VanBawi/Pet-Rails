@@ -48,14 +48,20 @@ ActiveRecord::Schema.define(version: 2019_08_07_081338) do
     t.string "title"
     t.text "description"
     t.string "picture"
-    t.bigint "user_id"
     t.string "images"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.string "address"
+    t.float "lat"
+    t.float "lng"
+    t.string "city"
+    t.string "state"
+    t.integer "age"
+    t.integer "contact"
+    t.string "pet_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -79,11 +85,16 @@ ActiveRecord::Schema.define(version: 2019_08_07_081338) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
@@ -95,6 +106,5 @@ ActiveRecord::Schema.define(version: 2019_08_07_081338) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "pets", "users"
   add_foreign_key "rents", "users"
 end

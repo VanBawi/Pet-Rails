@@ -11,11 +11,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   super do |user|
-  #     UserMailer.welcome_email(@user).deliver_later
-  #     TestingJob.perform_later(@user)
+  #   super 
+  #   # do |user|
+  #     # UserMailer.welcome_email(@user).deliver_later
+  #     # TestingJob.perform_later(@user)
   #     # .set(wait: 2.hours) set(wait_for: Date.tomorrow.noon)
-  #   end
   # end
 
   # GET /resource/edit

@@ -4,12 +4,73 @@ class User < ApplicationRecord
   # has_many :pets
 
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
   # def send_devise_notification(notification, *args)
   #   devise_mailer.send(notification, self, *args).deliver_later
   # end
+
+  after_commit :send_pending_devise_notifications
+
+  after_create_commit	:send_welcome_mail
+  # after_update_commit	:send_profile_update_notification
+  # after_destroy_commit	:remove_profile_data
+  # UserMailer.welcome_email(@user).deliver_later
+  #  TestingJob.perform_later(@user)
+
+  def send_welcome_mail
+    UserMailer.welcome_email(@user).deliver_later
+    # UserMailer.send_welcome_mail(email: email)
+    # TestingJob.perform_later(@user)
+  end
+
+ # If the record is new or changed then delay the email sending
+      
+  protected
+
+    def send_devise_notification(notification, *args)
+      # If the record is new or changed then delay the
+      # delivery until the after_commit callback otherwise
+      # send now because after_commit will not be called.
+      if new_record? || changed?
+        pending_devise_notifications << [notification, args]
+      else
+        render_and_send_devise_message(notification, *args)
+      end
+    end
+
+    private
+
+    def send_pending_devise_notifications
+      pending_devise_notifications.each do |notification, args|
+        render_and_send_devise_message(notification, *args)
+      end
+
+      # Empty the pending notifications array because the
+      # after_commit hook can be called multiple times which
+      # could cause multiple emails to be sent.
+      pending_devise_notifications.clear
+    end
+
+    def pending_devise_notifications
+      @pending_devise_notifications ||= []
+    end
+
+    def render_and_send_devise_message(notification, *args)
+      message = devise_mailer.send(notification, self, *args)
+
+      # Deliver later with Active Job's `deliver_later`
+      if message.respond_to?(:deliver_later)
+        message.deliver_later
+      # Remove once we move to Rails 4.2+ only, as `deliver` is deprecated.
+      elsif message.respond_to?(:deliver_now)
+        message.deliver_now
+      else
+        message.deliver
+      end
+    end
+      
 
   def self.new_with_session(params, session)
     super.tap do |user|

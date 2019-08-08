@@ -19,10 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 
-
-
 # Gemfile
-
+# gem 'searchkick'
 gem 'sidekiq'
 gem 'mailgun-ruby'
 gem 'aws-sdk-s3', require: false
