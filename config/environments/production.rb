@@ -62,6 +62,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { host: 'www.petloversrecode.site' }
+
+
   # Gmail configuration
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :mailgun
@@ -74,7 +77,7 @@ config.action_mailer.mailgun_settings = {
 config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                 587,
-  domain:               'example.com',
+  domain:               'www.petloversrecode.site',
   user_name:            'petloversrecode@gmail.com',
   password:              Rails.application.credentials.gmail[:password],
   authentication:       'plain',

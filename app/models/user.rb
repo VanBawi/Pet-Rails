@@ -4,21 +4,22 @@ class User < ApplicationRecord
   has_many :pets
 
 
-  devise :database_authenticatable, :registerable, 
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
 
-        #  :confirmable,
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
+       
+  # def send_devise_notification(notification, *args)
+  #   devise_mailer.send(notification, self, *args).deliver_later
+  # end
 
   after_commit :send_pending_devise_notifications
 
   # after_create_commit	:send_welcome_mail
+
   # after_update_commit	:send_profile_update_notification
   # after_destroy_commit	:remove_profile_data
-  # UserMailer.welcome_email(@user).deliver_later
+  # UserMailer.welcome_email(@user).deliver_now
   #  TestingJob.perform_later(@user)
 
   # def send_welcome_mail
