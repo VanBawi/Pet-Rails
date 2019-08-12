@@ -4,19 +4,19 @@ class PetsController < ApplicationController
   
 
   def index
-    search = params[:title].present? ? params[:title] : nil
+    # search = params[:title].present? ? params[:title] : nil
     @pets = Pet.all
   end
 
-  def autocomplete
-    render json: Pet.search(params[:query], {
-      fields: ["title^5", "description"],
-      match: :word_start,
-      limit: 10,
-      load: false,
-      misspellings: {below: 5}
-    }).map(&:title)
-  end
+  # def autocomplete
+  #   render json: Pet.search(params[:query], {
+  #     fields: ["title^5", "description"],
+  #     match: :word_start,
+  #     limit: 10,
+  #     load: false,
+  #     misspellings: {below: 5}
+  #   }).map(&:title)
+  # end
 
   def new
     @pet = Pet.new
@@ -31,7 +31,10 @@ class PetsController < ApplicationController
   end
 
   def create
+
+    # byebug
     @pet = Pet.new(pet_params)
+    @pet.user_id = current_user.id
     if(@pet.save)
       redirect_to pets_path(@pets)
     else

@@ -1,39 +1,23 @@
- <div class="container">
-    <%= form_tag(pets_path, method: :get, class: "form-inline", role: 'search') do %>
-        <div class="input-group">
-            <%= text_field_tag :title, 
-                params[:title],
-                id: 'pets_search',
-                # autocomplete: on,
-                placeholder: 'Search',
-                class: 'form-control'%>
-        </div>
-        <div class="input-group">
-            <%= submit_tag 'Search', name: nil, class: "btn-btn-default"%>
-        </div>
-    <%end%>
-</div>
-
+ 
 <div class="container">
-    <div class="title-containerr">
+    <%# <div class="title-containerr">
         <h1>Adorable Dogs </h1>
-    </div>
-
-
+    </div> %>
     <div class="pets">
         <% @pets.each do |pet| %>
         <div class="pet">
-            <h3> Title: <%= link_to truncate(pet.title), pet_path(pet) %> </h3><br>
-            <h3> Description:  <%= link_to truncate(pet.description, length: 150) %></h3><br>
-            <ul class="pet-action">
-                <li> <%= link_to "Edit", edit_pet_path(pet)%> </li> <br>
-                <li> <%= link_to "Delete", pet_path(pet), method: :delete %> </li><hr>
-            </ul>
+            <h4> Title <%= link_to truncate(pet.title), pet_path(pet)%> </h4><br>
+            <h4> Description <%= link_to pet.description, class: "form-control" %></h4><br>
+
+            <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-secondary"%> 
+            <%= link_to "Delete", pet_path(pet), class: "btn btn-danger",  method: :delete %> 
         </div>
         <% end %>
     </div>
 
-    <div class="link_button">
-        <%= link_to "Add pet", new_pet_path %>
+    <hr>
+
+    <div class="link_button" >
+        <%= link_to "Add pet", new_pet_path, class: "btn btn-success" %>
     </div>
 </div>

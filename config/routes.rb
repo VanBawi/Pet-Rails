@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
+  # namespace :admin do
+  #     resources :users
+
+  #     root to: "users#index"
+  #   end
 
     
   resources :locations

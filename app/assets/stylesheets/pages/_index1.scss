@@ -1,0 +1,30 @@
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.pets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: sapce-around;
+}
+
+.pet {
+    padding-top: 40px;
+    width: 80%;
+    min-width: 400px;
+}
+.link_button{
+    color: white;
+}
+
+.pet-action{
+    magrin :0px;
+}

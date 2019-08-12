@@ -119,14 +119,10 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    elasticsearch (7.3.0)
-      elasticsearch-api (= 7.3.0)
-      elasticsearch-transport (= 7.3.0)
-    elasticsearch-api (7.3.0)
-      multi_json
-    elasticsearch-transport (7.3.0)
-      faraday
-      multi_json
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     execjs (2.7.0)
     faraday (0.15.4)
@@ -285,10 +281,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    searchkick (4.1.0)
-      activemodel (>= 5)
-      elasticsearch (>= 6)
-      hashie
     selectize-rails (0.12.6)
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
@@ -315,6 +307,8 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    trix (0.10.1)
+      rails
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -357,6 +351,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  dotenv-rails (~> 2.7, >= 2.7.5)
   figaro
   font-awesome-sass
   jbuilder (~> 2.7)
@@ -370,12 +365,12 @@ DEPENDENCIES
   rails (~> 6.0.0.rc2)
   sass-rails (~> 5)
   sassc-rails (>= 2.1.0)
-  searchkick
   selenium-webdriver
   sidekiq
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  trix
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

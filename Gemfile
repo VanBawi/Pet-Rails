@@ -21,8 +21,12 @@ gem 'jbuilder', '~> 2.7'
 
 # Gemfile
 # gem 'searchkick'gem 
+
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
+
 gem 'administrate'
-gem 'searchkick'
+# gem 'searchkick'
+gem 'trix'
 gem 'sidekiq'
 gem 'mailgun-ruby'
 gem 'aws-sdk-s3', require: false

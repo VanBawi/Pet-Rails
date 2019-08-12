@@ -4,10 +4,10 @@ class User < ApplicationRecord
   has_many :pets
 
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
-
+        #  :confirmable,
        
   # def send_devise_notification(notification, *args)
   #   devise_mailer.send(notification, self, *args).deliver_later

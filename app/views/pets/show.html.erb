@@ -1,39 +1,34 @@
 <div class="container">
 
-    <div style="margin: 40px;">
-        <h1>Pet Selected</h1> 
+    <div class="col-md-5 text_box top-box">
+        <strong>Title</strong><br>
+        <h3 class="form-control"><%= @pet.title %>
     </div>
 
-    <div class="container">
-        <strong>Title:</strong><br>
-        <h3><%= @pet.title %>
+    <div class="col-md-5 text_box1">
+        <strong>Description</strong><br>
+        <h5 class="form-control"><%= @pet.description %></h5><br>
     </div>
 
-    <div class="container">
-        <strong>Description:</strong><br>
-        <h5><%= @pet.description %></h5><br>
-    </div>
-
-    <div class="container">
+    <div class="col-md-5 image-box">
         <strong>Picture:</strong><br>
-        <%= image_tag(url_for(@pet.picture))%>
+        <div > <%= image_tag(url_for(@pet.picture))%></div>
     </div>
 
-    <div class="container">
+    <div class="col-md-5 image-box">
         <strong>Images:</strong><br>
         <% @pet.images.each do |each_image|%>
         <%= image_tag(url_for(each_image))%>
         <% end %>
     </div>
 
-
-    <%# <%= link_to 'Edit', edit_pet_path(@pet)%>
-    <div>
-        <li> <%= link_to 'Back', pets_path%> </li>
-        <li> <%= link_to "Edit", edit_pet_path(@pet)%> </li> <br>
-        <li> <%= link_to "Delete", pet_path(@pet), method: :delete %> </li>
-        <hr>
+    <div class="col-md-5 button-links">
+        <%= link_to 'Back', pets_path, class: "btn btn-primary"%> 
+        <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-secondary"%> 
+        <%= link_to "Delete", pet_path(@pet), class: "btn btn-danger", method: :delete %> 
     </div>
+     <hr>
     <%# 
     .variant(resize_to_limit: [200, 200]) %>
+    <%# class="col-md-6 link_but" %>
 </div>
