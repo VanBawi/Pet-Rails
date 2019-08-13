@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :pets, dependent: :delete_all
 
 
-  devise :database_authenticatable, :registerable, 
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
         #  :confirmable,
