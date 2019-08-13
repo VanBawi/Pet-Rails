@@ -30,6 +30,11 @@
 yarn-debug.log*
 .yarn-integrity
 
+# .gitignore
+
+# Ignore environment variables
+.env
+
 # Ignore application configuration
 /config/application.yml
 

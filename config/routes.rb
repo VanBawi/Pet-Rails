@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   #     root to: "users#index"
   #   end
-
+  resources :billings
   resources :locations
   resources :profiles
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' } 
@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/billing' => 'billing#index', as: :billing 
+  # get '/billing' => 'billing#index', as: :billing 
 
-  get '/card/new' => 'billing#new_card', as: :add_payment_method
-  post "/card" => "billing#create_card", as: :create_payment_method
-  get '/success' => 'billing#success', as: :success
+  # get '/card/new' => 'billing#new_card', as: :add_payment_method
+  # post "/card" => "billing#create_card", as: :create_payment_method
+  # get '/success' => 'billing#success', as: :success
 end

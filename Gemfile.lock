@@ -388,7 +388,7 @@ DEPENDENCIES
   capistrano-rbenv
   capybara (>= 2.15)
   devise
-  dotenv-rails (~> 2.7, >= 2.7.5)
+  dotenv-rails
   figaro
   font-awesome-sass
   jbuilder (~> 2.7)
