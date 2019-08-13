@@ -26,6 +26,8 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 
 gem 'administrate'
 # gem 'searchkick'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 gem 'trix'
 gem 'sidekiq'
 gem 'mailgun-ruby'

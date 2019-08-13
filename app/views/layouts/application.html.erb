@@ -20,25 +20,23 @@
 <header>
   <% if user_signed_in? %>
   
-  <nav class="navbar navbar-light">
+  <nav class="navbar navbar-default">
     <a class="navbar-brand" href="">Pet Lover</a>
-     
+    <div class="container"> 
     <form class="form-inline mr-sm-2">
-       <%# <div class="form-control mr-sm-2"> %>
-        <%= form_tag(pets_path, method: :get, role: 'search') do %>
-          <div class="input-group">
-            <%= text_field_tag :title, 
-                params[:title],
-                id: 'pets_search',
-                # autocomplete: on,
-                placeholder: 'Search',
-                class: 'form-control'%>
-          </div>
-          <div class="form-inline search">
-            <%= submit_tag 'Search', name: nil, class: "btn-btn-primary"%>
-          </div>
-        <%end%>
-      <%# </div> %>
+        <%= form_tag(pets_path, method: :get, role: 'search') do |f|%>
+
+            <div class="input-group">
+              <%= text_field_tag :q, params[:q], class: 'form-control' %> 
+            </div>
+
+            <div class="form-inline search">
+              <%= button_tag 'Search', name: nil, class: "btn-btn-primary"%>
+            </div>
+          <%end%>
+      </div>
+      
+         <%= render @pets %>
 
       <div class="button" >
           <%= link_to "Pets Posts" , pets_path, class: "btn btn-info" %>
