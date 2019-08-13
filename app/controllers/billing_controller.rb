@@ -1,9 +1,10 @@
 class BillingController < ApplicationController
 
     before_action :authenticate_user!
-
-    Stripe.api_key = Rails.application.credentials.stripe[:secret_key]
+    
     var stripe = Stripe('pk_test_lRvozy2evAGW3hLzbhpht3Dy00SSr8YXjC');
+    Stripe.api_key = Rails.application.credentials.stripe[:secret_key]
+   
 
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
