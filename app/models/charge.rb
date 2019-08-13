@@ -1,4 +1,4 @@
-# class StripeChargesServices
+class StripeChargesServices
 #     DEFAULT_CURRENCY = 'usd'.freeze
 
 #     def initialize(params, user)
@@ -49,5 +49,5 @@
 #     def order_amount
 #         Order.find_by(id: order).amount
 #     end
-# end
+end
 
