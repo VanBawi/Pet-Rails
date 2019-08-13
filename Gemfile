@@ -24,10 +24,19 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 
+
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
+
+
 gem 'administrate'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+# gem 'stripe-rails'
 # gem 'searchkick'
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
+# gem 'elasticsearch-rails'
+# gem 'elasticsearch-model'
 gem 'trix'
 gem 'sidekiq'
 gem 'mailgun-ruby'

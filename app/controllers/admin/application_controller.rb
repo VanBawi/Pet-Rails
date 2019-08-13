@@ -7,7 +7,7 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     # before_action :authenticate_user!
-    before_action :authenticate_admin
+    # before_action :authenticate_admin
     # http_basic_authenticate_with name: "Jack", password: "password"
     # http_basic_authenticate_with(email: ENV.fetch("ADMIN_EMAIL"),password: ENV.fetch("ADMIN_PASSWORD"))
 
