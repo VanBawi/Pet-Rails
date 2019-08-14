@@ -29,6 +29,7 @@ gem 'capistrano-rbenv'
 
 
 # gem 'administrate'
+gem 'capistrano-sidekiq'
 gem 'honeybadger', '~> 4.0'
 gem 'pundit'
 gem 'dotenv-rails', :groups => [:development, :test]

@@ -67,11 +67,11 @@ Rails.application.configure do
 
   # Gmail configuration
 config.action_mailer.raise_delivery_errors = true
-config.action_mailer.delivery_method = :mailgun
+config.action_mailer.delivery_method = :smtp
 config.action_mailer.mailgun_settings = {
 
   api_key: Rails.application.credentials.mailgun_api, 
-  domain: 'sandbox6d54e8d9ea9e4c938330b85682056234.mailgun.org'
+  domain: 'petloversrecode.site'
 }
 
 config.action_mailer.smtp_settings = {
