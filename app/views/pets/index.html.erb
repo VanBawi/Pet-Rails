@@ -1,16 +1,17 @@
- 
+
 <div class="container">
-    <%# <div class="title-containerr">
-        <h1>Adorable Dogs </h1>
-    </div> %>
+
     <div class="pets">
         <% @pets.each do |pet| %>
         <div class="pet">
             <h4> Title <%= link_to truncate(pet.title), pet_path(pet)%> </h4><br>
             <h4> Description <%= link_to pet.description, class: "form-control" %></h4><br>
 
-            <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-secondary"%> 
-            <%= link_to "Delete", pet_path(pet), class: "btn btn-danger",  method: :delete %> 
+            <%# <% if @pet.user_id == current_user.id %> 
+                <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-secondary"%> 
+                <%= link_to "Delete", pet_path(pet), class: "btn btn-danger",  method: :delete, data: { confirm: "You sure?" } %> 
+            <%# <% end %> 
+
         </div>
         <% end %>
     </div>

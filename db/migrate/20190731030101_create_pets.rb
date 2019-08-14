@@ -4,9 +4,9 @@ class CreatePets < ActiveRecord::Migration[6.0]
       t.string    :title
       t.text      :description
       t.string    :picture
-      # t.references :user, foreign_key: true
       t.string    :images
       t.string    :user_id
+      t.float     :price
       t.timestamps
     end
   end

@@ -33,7 +33,6 @@ class PetsController < ApplicationController
 
   def create
 
-    # byebug
     @pet = Pet.new(pet_params)
     @pet.user_id = current_user.id
     if(@pet.save)
@@ -66,4 +65,3 @@ class PetsController < ApplicationController
     params.require(:pet).permit(:title, :description, :picture, images:[])
   end
 end
-# , notice:"Pet created!"
