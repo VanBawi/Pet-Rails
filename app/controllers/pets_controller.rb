@@ -6,7 +6,7 @@ class PetsController < ApplicationController
   def index
     # search = params[:title].present? ? params[:title] : nil
     @pets = Pet.all
-    @pets = Pet.search((params[:q].present? ? params[:q] : '*')).records
+    # @pets = Pet.search((params[:q].present? ? params[:q] : '*')).records
   end
 
   # def autocomplete
