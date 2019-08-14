@@ -31,7 +31,6 @@ gem 'capistrano-rbenv'
 # gem 'administrate'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-# gem 'stripe-rails'
 # gem 'searchkick'
 gem 'trix'
 gem 'sidekiq'
