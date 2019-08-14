@@ -2,17 +2,6 @@ class ChargesController < ApplicationController
   before_action :set_charge, only: [:show, :edit, :update, :destroy]
 
 
-  # Stripe.api_key = Rails.application.credentials.stripe[:secret_key]
-  # session = Stripe::Checkout::Session.create(
-  #       payment_method_types: ['card'],
-  #       subscription_data: {
-  #               items: [{
-  #               plan: 'plan_123',
-  #               }],
-  #           },
-  #       success_url: 'https://example.com/success',
-  #       cancel_url: 'https://example.com/cancel',
-  #       )
 
 
   def new
