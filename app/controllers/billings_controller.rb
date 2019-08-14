@@ -1,4 +1,0 @@
-class BillingsController < ApplicationController
-
-
- end
