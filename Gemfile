@@ -34,7 +34,7 @@ gem 'honeybadger', '~> 4.0'
 gem 'pundit'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-# gem 'searchkick'
+gem 'searchkick'
 gem 'trix'
 gem 'sidekiq'
 gem 'mailgun-ruby'
