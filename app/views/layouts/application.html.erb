@@ -11,27 +11,24 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js' %> 
- 
 
-
-
+    <script src="jquery.raty.js"></script>
 
 
     <%# bootstrap %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
-
 <body>
-
 <header>
   <% if user_signed_in? %>
-  
+  <div class="container"> 
   <nav class="navbar navbar-default">
     <a class="navbar-brand" href="">Pet Lover</a>
-    <div class="container"> 
-      <form class="form-inline  style=margin: 10px;">
-        <%= form_tag(pets_path, method: :get, role: 'search') do |f|%>
+    
+    <form class="form-inline mr-sm-2">
+      <div class="form-inline">
+          <%= form_tag(pets_path, method: :get, role: 'search') do |f|%>
 
             <div class="input-group">
               <%= text_field_tag :q, params[:q], class: 'form-control' %> 
@@ -41,22 +38,33 @@
               <%= submit_tag 'Search', name: nil, class: "btn-btn-default"%>
             </div>
           <%end%>
-      
-      
+      </div>
         
-        <div class="form-inline">
-            <div class="button navlink firstnav" >
-                <%= link_to "Pets Posts" , pets_path, class: "btn btn-info" %>
-            </div>
-            <div class="button navlink">
-                <%= link_to "Post Pet" , new_pet_path, class: "btn btn-info" %>
-            </div>
-            <div class="button navlink">
-                <%= link_to "Logout" , destroy_user_session_path, method: :delete, class: "btn btn-info" %>
-            </div>
-          </div>
+    <div class="form-inline">
+      <div class="button navlink firstnav" >
+          <%= link_to "Pets Posts" , pets_path, class: "btn btn-info" %>
+      </div>
+      <div class="button  navlink">
+          <%= link_to "Post Pet" , new_pet_path, class: "btn btn-info" %>
+      </div>
+
+      <div class="button  navlink">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <% Category.all.each do |category| %>
+                <li class="<%= 'active' if params[:category] == category.name %>">
+                  <%= link_to category.name, pets_path(category: category.name), class: "link" %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </div>
+      <div class="button  navlink">
+          <%= link_to "Logout" , destroy_user_session_path, method: :delete, class: "btn btn-info" %>
+      </div>
     </div>
-      </form>
+    </form>
   </nav>
  
 
@@ -73,15 +81,14 @@
   <% end %>
 </header>
 
-
-<section>
+<div class="container">
     <div id="flash">
       <% flash.each do |key, value| %>
        <div class="flash alert <%= alert_class(key)%>"><%= value %></div>
        <% end %>
     </div>
    <%= yield %>
-</section>
+</div>
 
   <%= javascript_pack_tag "application" %> 
 </body>

@@ -2,8 +2,8 @@
 <%= render partial: "shared/errors" %>
 <div class="container">
 
-  <%= form_with model: @pet, local: true do |f| %>
-
+  <%= form_with model: @pet, :html => {:multipart => true}, local: true do |f| %>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Category") %>
     <div class="field">
       <%= f.label :title %><br> 
       <%= f.text_field :title, class: "form-control" %><br>

@@ -8,13 +8,7 @@ class Pet < ApplicationRecord
     has_many :rates, foreign_key: :raiter_id
     has_many :rents, foreign_key: :renter_id
 
-    # searchkick word_start: [:title, :description]
-
-    # def search_data
-    #     {
-    #         title: title,
-    #         description: description
-    #     }
-    # end
+    belongs_to :category
+	has_many :reviews
     
 end

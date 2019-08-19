@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   root to: 'welcome#show'
 
-  resources :pets
+  resources :pets do 
+    resources :reviews
+  end
+  # resources :reviews
+
   resources :locations
   resources :charges, only: [:new, :create]
 

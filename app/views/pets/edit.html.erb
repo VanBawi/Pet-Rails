@@ -1,11 +1,12 @@
 <div class="container">
 
     <div class="title-container">
-        <h1> Edit pet </h1>
+        <h1> Edit Pet </h1>
     </div>
-    <%# <%if current_user && current_user.id == params[:id].to_i %> 
+
     <div>
-      <%= form_for :pet, url: pet_path(@pet), method: :put do |f| %>
+      <%= form_for :pet, url: pet_path(@pet), :html => {:multipart => true}, method: :patch do |f| %>
+            <%= f.select :category_id, @categories %>
 
         <div class="field">
             <%= f.label :title %> 

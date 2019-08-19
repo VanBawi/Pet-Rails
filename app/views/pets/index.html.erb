@@ -1,24 +1,26 @@
 
 <div class="container">
+<h2 class="current_category"><%= params[:category] %> </h2>
 
-    <div class="pets">
+    <% if @pets.count == 0 %>
+    <h2> No pets available in this category</h2>
+    <% else %>
+
+    <div class="row">
         <% @pets.each do |pet| %>
-        <div class="pet">
-            <h4> Title <%= link_to truncate(pet.title), pet_path(pet)%> </h4><br>
-            <h4> Description <%= link_to pet.description, class: "form-control" %></h4><br>
-
-            <%# <% if @pet.user_id == current_user.id %> 
-                <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-secondary"%> 
-                <%= link_to "Delete", pet_path(pet), class: "btn btn-danger",  method: :delete, data: { confirm: "You sure?" } %> 
-            <%# <% end %> 
-
+        <div class="col-md-6">
+            <h4> Title: <%= link_to truncate(pet.title), pet_path(pet)%> </h4><br>
+            <a href="/pets/<%= pet.id %>"> 
+               <%= image_tag pet.picture, class: "pet" %> 
+            </a><br>
         </div>
         <% end %>
     </div>
-
+    <% end %>
     <hr>
 
-    <div class="link_button" >
-        <%= link_to "Add pet", new_pet_path, class: "btn btn-success" %>
-    </div>
+        <div class="link_button" >
+            <%= link_to "Add pet", new_pet_path, class: "btn btn-success" %>
+        </div>
 </div>
+

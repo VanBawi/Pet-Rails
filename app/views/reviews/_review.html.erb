@@ -1,0 +1,31 @@
+
+<div class="card md-col-12">
+
+		<%@pet.reviews.each do |review|%>
+		<div class="d-flex">
+			<%review.rating.to_i.times do%>
+				<h1 class="fas fa-star" style="color:#ffc107; font-size:16px;">
+			<%end%>
+		</div>
+
+		<div class="d-flex text">
+			<%= review.comment%>
+		<%end%>
+		</div>
+
+		<div class="d-flex edit-button">
+		<% if user_signed_in? %>
+
+			<% if review.user_id == current_user.id %>
+				<i class="far fa-edit edit">
+					<%= link_to "Edit", edit_pet_review_path(review.pet, review) %>
+				</i>
+				<i class="fa fa-trash delete" aria-hidden="true">
+					<%= link_to "Delete", pet_review_path(review.pet, review), method: :delete, data: { confirm: "Are you sure?" } %>
+				</i>
+
+			<% end %>	
+		<% end %>
+		</div>
+
+</div>	

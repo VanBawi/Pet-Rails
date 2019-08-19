@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_054438) do
+ActiveRecord::Schema.define(version: 2019_08_19_024317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2019_08_13_054438) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "charges", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -46,9 +52,11 @@ ActiveRecord::Schema.define(version: 2019_08_13_054438) do
     t.text "description"
     t.string "picture"
     t.string "images"
-    t.string "user_id"
+    t.integer "user_id"
+    t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "category_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -81,6 +89,15 @@ ActiveRecord::Schema.define(version: 2019_08_13_054438) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_rents_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "pet_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
