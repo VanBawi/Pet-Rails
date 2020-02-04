@@ -3,12 +3,97 @@
     padding-top: 40px;
 }
 .button-links{
-    padding-top: 40px;
+    padding: 10px 10px 10px 10px;
 }
-
+.button-link{
+    padding:5px;
+    margin:5px;
+}
 .review{
     margin-top: 10px;
 }
 .review-col{
     margin :40px;
+}
+
+
+
+
+// pet show page css
+
+
+.image_padding, .images, .review_padding{
+    padding-top: 20px;
+}
+
+.picture{
+    width:100%;
+}
+
+.text_scroll{
+    overflow: auto;
+}
+
+.main_image{
+    width:100%; 
+    object-fit:cover;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.each_image{
+    margin:3px;
+    height:auto;
+    max-width:200px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.descript_text{
+    height:auto;
+    max-height: 350px;
+    overflow: auto;
+}
+
+
+.index_image{
+    max-height: 200px;
+}
+
+.index_image_each{
+    margin-left: 5px;
+    height:auto;
+    margin-top:15px;
+    max-width:100px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title-text{
+    padding-bottom: 15px;
+    padding-top: -5px;
+    display:grid;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+hr.someClass {
+    background-color: purple;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid black
+  }
+.shadow_hr{
+  background-color: rgb(46, 97, 110);
+  height: 2px;
+  width:100%;
+  border-top: 1px solid black;
+  box-shadow:#EDEDED 3px 2px 0;
+  position: relative;
+}
+
+.index_top_text{
+    padding-top: 20px;
 }

@@ -9,6 +9,10 @@ class Pet < ApplicationRecord
     has_many :rents, foreign_key: :renter_id
 
     belongs_to :category
-	has_many :reviews
+    has_many :reviews
+    
+    # mount_uploader :images, ImageUploader
+    # mount_uploader :picture, ImageUploader
+
     
 end

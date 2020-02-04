@@ -3,6 +3,9 @@ class ReviewsController < ApplicationController
     before_action :find_review, only: [:edit, :update, :destroy]
     before_action :authenticate_user!, only: [:new, :edit]
 
+    before_action :limit_review, only: [:new, :create]
+    
+     
   # def new
   #   @pet = Pet.find(params[:pet_id])
   #   @review = Review.new
@@ -20,14 +23,14 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def show
-  #   @reviews = @pet.reviews.to_a
-  #   @avg_rating = if @reviews.blank?
-  #     0
-  #   else
-  #     @pet.reviews.average(:rating).round(2)
-  #   end
-  # end
+  def show
+    @reviews = @pet.reviews.to_a
+    @avg_rating = if @reviews.blank?
+      0
+    else
+      @pet.reviews.average(:rating).round(2)
+    end
+  end
 
   def edit
     # @pet = Review.find(params[:id])
@@ -58,6 +61,14 @@ class ReviewsController < ApplicationController
 
   def find_review
     @review = @pet.reviews.find(params[:id])
+  end
+
+  def limit_review
+    user_review = current_user.pet_review(@pet)
+
+    if user_review.present?
+      redirect_to edit_pet_review_path(@pet, user_review)
+    end 
   end
 
 end

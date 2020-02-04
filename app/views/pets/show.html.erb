@@ -1,53 +1,53 @@
-<div class="row">
-
-    <div class="col-md-4 card" style="border:0px;">
-        <div class="picture card-body">
-            <%= image_tag(url_for(@pet.picture))%>
-        </div>
+<div class="row image_padding">
+    <%# top image and text description %>
+    <div class="col-md-5 main_image each_image_no_border">
+        <%= image_tag(url_for(@pet.picture), width: '100%')%>
+        <hr>
+        <h3><%= @pet.title %></h3>
+    </div>
+    <br>
+     <div class="col-md-6 ">
+        <h3> <%= @pet.title %></h3>
+        <p class="descript_text"> <%= @pet.description %></p>
     </div>
 
-     <div class="col-md-8 card card-body" style="border:0px;">
-        <h2> <%= @pet.title %></h2>
-        <p> <%= @pet.description %></p>
-    </div>
-
-        <div class="images col-md-12 card" style="border:0px;">
-            <% @pet.images.each do |each_image|%>
-            <div class="images col-md-3 card" style="border:0px;">
-                <%= image_tag(url_for(each_image)) %>
-                <% end %>
-            </div>
-        </div>
-    
-</div> 
-
-<div class="row review-col">
-
-    <div class="col-md-8">
-        <h4>Reviews</h4>
-        <%= render @pet.reviews %>
-        
-        <div class="review">
-            <%= link_to "Add Review", new_pet_review_path(@pet) %>
-        </div>
-
-    </div>
-</div>
 
 
+  <%# Lower images  %>  
 
-    <div class="col-md-5 button-links">
-        <%= link_to 'Back', pets_path, class: "btn btn-primary"%> 
-        <% if user_signed_in? %>
-            <% if @pet.user_id.to_i == current_user.id %>
-                <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-secondary"%> 
-                <%= link_to "Delete", pet_path(@pet), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %> 
-            <% end %>
+
+    <div class="row col-md-12 button-links ">
+         <% @pet.images.each do |each_image|%>
+            <%= image_tag(url_for(each_image), width:'50%', class:'each_image col-md-2') %>
         <% end %>
     </div>
 
 
-<hr>
 
+    <div class="row container button-links">
+      <%= link_to 'Back', pets_path, class: "btn btn-primary button-link"%> 
+        <% if user_signed_in? %>
+            <% if @pet.user_id.to_i == current_user.id %>
+                <%= link_to "Edit", edit_pet_path(@pet), class: "btn btn-outline-secondary button-link"%> 
+                <%= link_to "Delete", pet_path(@pet), class: "btn btn-danger button-link", method: :delete, data: {confirm: "Are you sure?"} %> 
+            <% end %>
+        <% end %>
+    </div>
+    <hr>
 
+    <%# Review section %>
+    <div class="row container">
+        <div class="review_padding col-md-5">
+            <h4>Reviews</h4>
+            <%= render @pet.reviews %>
+            <% if @pet.user_id.to_i == current_user.id %>
+            <%= current_user.name %>
+            <% end %>
+        </div>
+        <div class="review">
+            <%= link_to "Add Review", new_pet_review_path(@pet) %>
+        </div>
+    </div>
+
+</div>
 

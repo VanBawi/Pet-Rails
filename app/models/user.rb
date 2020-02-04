@@ -17,6 +17,15 @@ class User < ApplicationRecord
 
  # If the record is new or changed then delay the email sending
       
+def pet_review(pet)
+  Review.find_by(user_id: self, pet_id: pet)
+end
+
+
+
+
+
+
   protected
 
     def send_devise_notification(notification, *args)

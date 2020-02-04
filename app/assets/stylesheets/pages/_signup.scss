@@ -11,10 +11,23 @@
  .header{
      padding-top: 20px;
  }
+ .text_box{
+    text-align: left;
+}
 
+.submit_btn, .text_box1{
+    display:flex;
+    justify-content: start;
+}
  .background{
     background-image: url("https://content.fortune.com/wp-content/uploads/2017/08/164860646.jpg?resize=701,394");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 900px;
+    height: 550px;
+    width: 100%;
+    border-radius: 10px;
+ }
+
+ .heading{
+    padding-bottom: 20px;
  }

@@ -1,0 +1,48 @@
+<header>
+        <% if user_signed_in? %>
+        <nav class="navbar navbar-default">
+
+          <div class="container">
+          <div class="navbar-brand logo-text">Pet Lover</div>
+          <form class="form-inline mr-sm-2">
+              
+            <div class="form-inline">
+              <div class="button navlink firstnav" >
+                  <%= link_to "All Posts" , pets_path, class: "btn btn-info" %>
+              </div>
+              <div class="button  navlink">
+                  <%= link_to "Add Pet" , new_pet_path, class: "btn btn-info" %>
+              </div>
+
+              <div class="nav-item  navlink">
+                <div class="nav-item dropdown button">
+                    <a  id="dropdown_list" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                    <ul class="dropdown-menu">
+                      <% Category.all.each do |category| %>
+                        <li class="<%= 'active' if params[:category] == category.name %>">
+                          <%= link_to category.name, pets_path(category: category.name), class: "dropdown-item" %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="button  navlink">
+                  <%= link_to "Logout" , destroy_user_session_path, method: :delete, class: "btn btn-info" %>
+                </div>
+            </div>
+          </form>
+      </nav>
+    
+      <% else %>
+      <div class="navbartop">
+        <nav class="navbar ">
+          <h1 class="navbar-brand"><strong>Pet Lover</strong></h1>
+            <form class="form-inline" style="margin: 10px;">
+              <div class="nav_link"><%= link_to "Sign Up", new_user_registration_path  %></div>
+              <div class="nav_link"><%= link_to "Sign In", user_session_path  %></div>     
+            </form>
+        </nav>
+      </div>
+      <% end %>
+</header>

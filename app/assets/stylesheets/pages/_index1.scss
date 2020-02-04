@@ -13,7 +13,7 @@ h1 {
 .pets {
     display: flex;
     flex-wrap: wrap;
-    justify-content: sapce-around;
+    justify-content: space-around;
 }
 
 .pet {
@@ -26,5 +26,11 @@ h1 {
 }
 
 .pet-action{
-    magrin :0px;
+    margin:0px;
+}
+
+
+#mainimage{
+    width:50%;
+    height: 20px;
 }

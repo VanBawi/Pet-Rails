@@ -1,26 +1,35 @@
 
 <div class="container">
-<h2 class="current_category"><%= params[:category] %> </h2>
+    <h2 class="current_category"><%= params[:category] %> </h2>
 
     <% if @pets.count == 0 %>
-    <h2> No pets available in this category</h2>
+        <h3> No pets available in this category</h3>
     <% else %>
+    
+    <h5 class="index_top_text"><i>Welcome form our pets app. We are here to help you care your dearest pets.<br> We will serve you with fast and caring.</i></h5>
+    
+    <hr class="shadow_hr">
 
-    <div class="row">
+    <div class="row col-md-12">
+        
         <% @pets.each do |pet| %>
-        <div class="col-md-6">
-            <h4> Title: <%= link_to truncate(pet.title), pet_path(pet)%> </h4><br>
-            <a href="/pets/<%= pet.id %>"> 
-               <%= image_tag pet.picture, class: "pet" %> 
-            </a><br>
-        </div>
+            <a href="/pets/<%= pet.id %>", class="col-md-3 justify-content-md-center index_image_each"> 
+            
+               <%= image_tag pet.picture,width: '100%', class: "index_image" %>
+
+               <hr class="someClass">
+
+               <div class="title-text">
+                    <%= pet.title %>
+                </div>
+            </a>
+           
         <% end %>
     </div>
     <% end %>
+</div>
     <hr>
-
         <div class="link_button" >
             <%= link_to "Add pet", new_pet_path, class: "btn btn-success" %>
         </div>
-</div>
 
