@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.0.rc2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem "puma", ">= 3.12.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -17,6 +17,8 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+
+gem "loofah", ">= 2.3.1"
 
 
 # Gemfile
@@ -44,12 +46,15 @@ gem 'aws-sdk-s3', require: false
 gem "figaro"
 gem "mini_magick"
 gem 'omniauth-facebook'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
-gem 'simple_form'
+gem "simple_form", ">= 5.0.0"
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
+gem "rubyzip", ">= 1.3.0"
+gem "nokogiri", ">= 1.10.4"
+gem "rack", ">= 2.0.8"
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'

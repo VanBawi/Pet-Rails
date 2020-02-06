@@ -1,36 +1,40 @@
-<div class="container">
+<div class="image_padding row">
+    <h1> Edit Pet </h1>
+</div>
 
-    <div class="title-container">
-        <h1> Edit Pet </h1>
-    </div>
+<div class="row">
 
-    <div>
+    <div class="col-md-6">
       <%= form_for :pet, url: pet_path(@pet), :html => {:multipart => true}, method: :patch do |f| %>
-            <%= f.select :category_id, @categories %>
+        <div class="btn btn-outline-secondary">
+            <%= f.select :category_id, @categories, class:"btn btn-outline-secondary" %>
+        </div>
+
+        <hr>
 
         <div class="field">
             <%= f.label :title %> 
-            <%= f.text_field :title, class: "form-control" %><br>
+            <%= f.text_field :title, class: "form-control", placeholder:"Title" %><br>
         </div>
 
-        <div class="field">
+        <div class="field ">
             <%= f.label :description %>
-            <%= f.text_area :description, class: "form-control" %><br>
+            <%= f.text_area :description, class: "form-control description-box", placeholder:"Description", rows: 10 %><br>
         </div>
 
-        <div class="field">
+       <div class="field">
             <%= f.label :picture %> 
-            <%= f.file_field :picture, class: "form-control" %><br>
+            <%= f.file_field :picture %><br>
         </div>
 
         <div class="field">
           <%= f.label :images %> 
-          <%= f.file_field :images, multiple: true, class: "form-control" %><br>
+          <%= f.file_field :images, multiple: true %><br>
         </div>
 
-        <div class="field button-link">
+        <div class="form-field button-link-edit">
             <%= f.submit class: "btn btn-primary"%>
         </div>
-        <%end%>
-      </div>
+      <%end%>
+    </div>
 </div>

@@ -43,9 +43,10 @@ class PetsController < ApplicationController
   end
 
   def update
+    @pet = Pet.find(params[:id])
     @pet.category_id = params[:category_id]
     @pet.user_id = current_user.id
-    if (@pet.update(pet_params))
+    if @pet.update(pet_params)
     redirect_to pets_path(@pets)
     else
       @errors = @pet.errors.full_messages
