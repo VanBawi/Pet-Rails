@@ -1,7 +1,7 @@
 <div class="row image_padding">
     <%# top image and text description %>
     <div class="col-md-5 main_image each_image_no_border">
-        <%= image_tag(url_for(@pet.picture), width: '100%')%>
+        <%= image_tag(url_for(@pet.picture.url), width: '100%')%>
         <hr>
         <h3><%= @pet.title %></h3>
     </div>
@@ -18,7 +18,7 @@
 
     <div class="row col-md-12 button-links ">
          <% @pet.images.each do |each_image|%>
-            <%= image_tag(url_for(each_image), width:'50%', class:'each_image col-md-2') %>
+            <%= image_tag(url_for(each_image.url), width:'50%', class:'each_image col-md-2') %>
         <% end %>
     </div>
 

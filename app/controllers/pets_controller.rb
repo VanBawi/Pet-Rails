@@ -30,7 +30,6 @@ class PetsController < ApplicationController
   end
 
   def create
-
     @pet = current_user.pets.build(pet_params)
     @pet.category_id = params[:category_id]
 
@@ -63,7 +62,7 @@ class PetsController < ApplicationController
 
   private 
   def pet_params
-    params.require(:pet).permit(:title, :description, :picture, :category_id, images:[])
+    params.require(:pet).permit(:title, :description, :picture, :category_id, {images: []})
   end
 
   def find_pet

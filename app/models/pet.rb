@@ -11,8 +11,8 @@ class Pet < ApplicationRecord
     belongs_to :category
     has_many :reviews
     
-    # mount_uploader :images, ImageUploader
-    # mount_uploader :picture, ImageUploader
+    mount_uploaders :images, ImageUploader
+    mount_uploader :picture, ImageUploader
 
     
 end

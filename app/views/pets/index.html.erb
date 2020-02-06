@@ -15,7 +15,7 @@
         <% @pets.each do |pet| %>
             <a href="/pets/<%= pet.id %>", class="col-md-3 justify-content-md-center index_image_each"> 
             
-               <%= image_tag pet.picture,width: '100%', class: "index_image" %>
+               <%= image_tag pet.picture.url, width: '100%', class: "index_image" %>
 
                <hr class="someClass">
 
