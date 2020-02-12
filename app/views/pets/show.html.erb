@@ -1,6 +1,6 @@
 <div class="row image_padding">
     <%# top image and text description %>
-    <div class="col-md-5 main_image each_image_no_border">
+    <div class="col-md-5 main_image each_image_no_border card-img">
         <%= image_tag(url_for(@pet.picture.url), width: '100%')%>
         <hr>
         <h3><%= @pet.title %></h3>
@@ -11,18 +11,13 @@
         <p class="descript_text"> <%= @pet.description %></p>
     </div>
 
+  <%# Lower images  %> 
 
-
-  <%# Lower images  %>  
-
-
-    <div class="row col-md-12 button-links ">
+    <%# <div class="row col-md-12 button-links ">
          <% @pet.images.each do |each_image|%>
-            <%= image_tag(url_for(each_image.url), width:'50%', class:'each_image col-md-2') %>
-        <% end %>
-    </div>
-
-
+            <%# <%= image_tag(url_for(each_image.url), width:'100%', class:'each_image col-md-2') %>
+        <%# <% end %>
+    <%# </div> %>
 
     <div class="row container button-links">
       <%= link_to 'Back', pets_path, class: "btn btn-primary button-link"%> 
@@ -33,21 +28,18 @@
             <% end %>
         <% end %>
     </div>
-    <hr>
+</div>
+<%# <hr> %>
 
     <%# Review section %>
-    <div class="row container">
-        <div class="review_padding col-md-5">
-            <h4>Reviews</h4>
-            <%= render @pet.reviews %>
-            <% if @pet.user_id.to_i == current_user.id %>
-            <%= current_user.name %>
-            <% end %>
-        </div>
-        <div class="review">
-            <%= link_to "Add Review", new_pet_review_path(@pet) %>
-        </div>
+
+ <%# <div class="row">
+        <h4>Reviews</h4> 
     </div>
-
-</div>
-
+<div class="column container">
+    <%= render 'reviews/review' %>
+<%# </div>
+    
+    <div class="row review">
+        <%= link_to "Add Review", new_pet_review_path(@pet) %>
+    <%# </div> %>

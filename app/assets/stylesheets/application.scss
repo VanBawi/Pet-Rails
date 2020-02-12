@@ -17,7 +17,18 @@
 */
 
 // Homepage stylesheet controller
-//////////////////////////////////////////////////////////////////
+/////////////////////////////////////
+body{
+  background-color: #f3f1ed !important;
+  
+}
+
+
+
+
+///////////////////////////////*
+// Nav links stylings
+//////////////////////////////*/
 .nav_link{
   margin-left: 20px; 
   background-color: white; 
@@ -27,11 +38,11 @@
   color: white;
 }
 .navbartop{
-  background-color: #808080;
+  background-color: #add8e6;
 }
 
 .navbar{
-  background-color: #808080;
+  background-color: #add8e6;
 }
 .navbar-light{
  background-color: #ffc966;
@@ -39,19 +50,21 @@
 .button{
   margin: 5px;
 }
-.search{
- padding-left: 5px;
+
+
+h1{
+  padding: 15px 0px 15px 0px;
+}
+
+p {
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 18px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial;
-  background-color :#D3D3D3;
-}
 
 .header {
   text-align: center;
@@ -65,18 +78,40 @@ body {
 
 }
 
-/* Create four equal columns that sits next to each other */
-.column {
-  display:flex;
-  max-width: 100%;
-
+//////////////////////////////////////
+// Image and text styling for show page
+//////////////////////////////////////
+.image_flex img{
+  
+  width:100%;
+  height: auto;
+  max-width:420px;
+  max-height:280px;
 }
 
-.column img {
-  margin-left: 2%;
-  width: 30%;
-  height: 300px; 
-  // display: flex;
+.flex-1{
+  display:flex;
+  // justify-content: flex-end;
+}
+
+.image-tex-pad{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.paragraph_flex{
+  align-self: center;
+}
+
+
+
+.paragraph_flex{
+  padding-bottom: 20px;
+}
+
+.footer{
+  padding-top:20px;
+  margin-top:15px;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */

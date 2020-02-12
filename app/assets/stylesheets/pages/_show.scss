@@ -29,7 +29,10 @@
 
 
 // pet show page css
-
+.welcome_text{
+    font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+    font-stretch: expanded;
+}
 
 .image_padding, .images, .review_padding{
     padding-top: 20px;
@@ -53,17 +56,19 @@
     margin:3px;
     height:auto;
     max-width:200px;
-    border: 1px solid gray;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    // border: 1px solid gray;
+    // border-radius: 3px;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
-.descript_text{
-    height:auto;
-    max-height: 350px;
-    overflow: auto;
-}
+// .descript_text{
+//     height:auto;
+//     max-height: 350px;
+//     overflow: auto;
+//     padding-bottom:10px;
+//     margin-bottom:10px;
+// }
 
 
 .index_image{
@@ -71,13 +76,15 @@
 }
 
 .index_image_each{
+    max-height: 450px;
     margin-left: 5px;
     height:auto;
+    width:100%;
     margin-top:15px;
-    max-width:100px;
-    border: 1px solid gray;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width:300px;
+    // border: 1px solid gray;
+    // border-radius: 3px;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -87,11 +94,12 @@
 
 
 .title-text{
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     padding-top: -5px;
     display:grid;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
 hr.someClass {

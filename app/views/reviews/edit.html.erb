@@ -5,9 +5,9 @@
         <h1>Edit Review </h1>
           <%= simple_form_for([@pet, @review]) do |f| %>
             <%= f.label :rating %>
-            <%= f.number_field :rating, class: "form-control"  %><br>
+            <%= f.number_field :rating, class: "form-control", max: 5  %><br>
             <%= f.label :comment %>
-            <%= f.text_field :comment, class: "form-control"  %><br>
+            <%= f.text_field :comment, class: "form-control", rows: 5  %><br>
             <%= f.button :submit, class: "btn btn-primary"%>
         <% end %>
 	</div>

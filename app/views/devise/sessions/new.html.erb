@@ -4,10 +4,9 @@
         <div class="background">
        <h2 class="heading"> Sign In to Pet Lover</h2>
 
-      <%# 
-      <div class="col-md-6 login_btn ">
-        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary"%>
-      <%# </div> %>
+      <div class=" login_btn_fb ">
+            <%= link_to "Sign In with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary"%>
+        </div>
 
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
