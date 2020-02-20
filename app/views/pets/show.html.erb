@@ -13,11 +13,11 @@
 
   <%# Lower images  %> 
 
-     <div class="row col-md-12 button-links ">
+     <%# <div class="row col-md-12 button-links ">
          <% @pet.images.each do |each_image|%>
-            <%= image_tag(url_for(each_image.url), width:'100%', class:'each_image col-md-2') %>
-       <% end %>
-    <</div> %>
+            <%# <%= image_tag(url_for(each_image.url), width:'100%', class:'each_image col-md-2') %>
+       <%# <% end %>
+    <%# </div> %>
 
     <div class="row container button-links">
       <%= link_to 'Back', pets_path, class: "btn btn-primary button-link"%> 
