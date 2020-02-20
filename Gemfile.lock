@@ -353,7 +353,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.4.1)
   byebug
   capybara (>= 2.15)
-  carrierwave (~> 2.0, >= 2.0.2)
+  carrierwave (~> 2.0)
   carrierwave-aws (~> 1.4)
   devise (>= 4.7.1)
   dotenv-rails

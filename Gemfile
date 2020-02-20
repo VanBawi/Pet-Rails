@@ -32,7 +32,7 @@ gem "loofah", ">= 2.3.1"
 
 # gem 'administrate'
 # gem 'capistrano-sidekiq'
-gem 'carrierwave', '~> 2.0', '>= 2.0.2'
+gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-aws', '~> 1.4'
 gem 'honeybadger', '~> 4.0'
 gem 'pundit'
